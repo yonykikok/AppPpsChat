@@ -1,0 +1,135 @@
+
+// SPLASH---------------------------------------
+#custom-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100000;
+    width:100%;
+    background-color: #002a3e;
+  }
+
+  #texto1,#texto2,#texto3,#texto4,#texto5{
+    font-size: 60%;
+  }
+#texto1{
+  max-width: 90px;
+  left: 67% !important;
+}
+#texto2{
+  max-width: 90px ;
+  left: 12% !important;
+}
+#texto3{
+  max-width: 90px ;
+  left: 67% !important;
+  top: 36% !important;
+}
+#texto4{
+  max-width: 90px ;
+  left: 67% !important;
+  top: 51% !important;
+}
+#texto5{
+  max-width: 90px ;
+  top: 69% !important;
+  left: 12% !important;
+} 
+
+  #bubbleTopRight,#texto1{
+    visibility: hidden;
+    z-index:-1;
+    position:absolute;
+    top: 15%;
+    left: 65%;
+    animation-name: aparecer;
+    animation-duration:15s;
+    animation-delay: 1s;
+  }
+  #bubbleTopLeft,#texto2{
+    visibility: hidden;
+    z-index:-1;
+    position:absolute;
+    top: 25%;
+    left: 0%;
+    animation-name: aparecer;
+    animation-duration:15s;
+    
+    animation-delay: 3s;
+  }
+  #bubbleMidRight,#texto3{
+    visibility: hidden;
+    z-index:-1;
+    position:absolute;
+    top: 35%;
+    animation-name: aparecer;
+    animation-duration:15s;
+    left: 65%;
+    animation-delay: 5s;
+  }
+  #bubbleBottonRight,#texto4{
+    visibility: hidden;
+    z-index:-1;
+    position:absolute;
+    top: 50%;
+    animation-name: aparecer;
+    animation-duration:15s;
+    animation-delay: 6s;
+    left: 65%;
+  }
+  #bubleBottomLeft,#texto5{
+    visibility: hidden;
+    z-index:-1;
+    position:absolute;
+    top: 70%;
+    animation-name: aparecer;
+    animation-duration:15s;
+    animation-delay: 9s;
+    left: 0%;
+  }
+
+@keyframes aparecer{
+  from{
+    
+    visibility: visible;
+  }
+  10%{
+     z-index: -2;
+  }
+  to{
+    visibility: visible;
+    z-index: 10;
+  }
+}
+      
+  .flb {
+    // background-color: #3ebffb;  
+    --background:none;
+    background: url("../assets/images/classroomsplashWhitOutBubbles.png") no-repeat center / cover;
+    height:100%;
+    width:100%;
+    animation: pulse 1s linear forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Aligner-item {
+    max-width: 50%;
+  }
+  .Aligner-item--top {
+    align-self: flex-start;
+  }
+  .Aligner-item--bottom {
+    align-self: flex-end;
+  }
+  #custom-overlay img {
+    display: block;
+    margin: 0 auto;
+    width: 35%;
+    height: auto;
+    // animation: animation 3100ms linear infinite both;
+    // animation-delay: 1s;
+  }
+//   END SPLASH-------------------------------------------

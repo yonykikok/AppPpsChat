@@ -1,0 +1,217 @@
+ion-content{
+    --background:none;
+    background-color: black;
+  }
+  ion-header {
+    position: absolute;
+    h1{
+      background: none;
+    }
+  }
+  *{
+    color: white;
+  }
+
+  ion-card{
+    
+    background-color: rgba(128, 128, 128, 0.1);
+    // background: transparent;
+    border-radius: 30px;
+    top: 25%;
+   
+  }
+#divUsuarios{
+  margin-top: 35px;
+}
+  ion-button{
+      margin-top: 35px;
+  }
+#video{
+    z-index: -1;
+    position: absolute;
+}
+
+.iconUser{
+    font-size: 600%;
+}
+#mainIconUser{
+    background-color: rgba(128, 128, 128, 0.1);
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    position: absolute;
+    top: 4.59%;
+    left: 30%;
+    font-size: 900%;
+}
+ion-header{
+    *{
+        background-color: rgb(56, 56, 56);
+        color: white;
+    }
+    p{
+        display: inline-block;
+        margin-left: 5px;
+        margin-right: 5px;
+        transform: translateY(-8px);
+    }
+    img{
+       // animation-name: vibrar;
+        animation-iteration-count: infinite;
+        animation-duration: 3s;
+    }
+}
+.iconUser:hover{
+   animation-name: seleccionado;
+   animation-duration: 1s;
+}
+.iconHeader{
+    max-width: 50px;
+    max-height: 50px;
+}
+@keyframes vibrar{
+    from{
+        transform: rotateZ(-10deg) ;
+    }
+    9%{
+        transform: rotateZ(0deg);
+    }    
+    18%{
+        transform: rotateZ(10deg);
+    }
+    27%{
+        transform: rotateZ(0deg);
+    }
+    36%{
+        transform: rotateZ(-10deg);
+    }
+    45%{
+        transform: rotateZ(0deg);
+    }
+    54%{
+        transform: rotateZ(10deg);
+    }    
+    63%{
+        transform: rotateZ(0deg);
+    }
+    72%{
+      transform: rotateZ(-10deg);
+    }
+    81%{
+        transform: rotateZ(0deg);
+    }
+    90%{
+        transform: rotateZ(10deg);
+    }
+    99%{
+        transform: rotateZ(0deg);
+    }
+    to{
+    transform: rotateZ(-10deg);
+    }
+}
+@keyframes seleccionado{
+    from{
+        color: red;
+    }
+    80%{
+        color: red;
+    }
+    to{
+        color: green;
+
+    }
+}
+
+//AGOSOASDSADSA
+
+// SPLASH---------------------------------------
+#custom-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100000;
+    width:100%;
+    background-color: #002a3e;
+  }
+
+  #bubbleTopRight,
+  #bubbleTopLeft,
+  #bubbleMidRight,
+  #bubbleBottonRight,
+   #bubleBottomLeft{
+    visibility: hidden;
+    position:absolute;
+    z-index:0; 
+    animation-name: aparecer;
+    animation-duration:15s;
+    animation-iteration-count: infinite;
+   }
+
+  #bubbleTopRight{
+    max-width: 200px;
+    max-height: 60px;   
+    top: 15%;
+    left: 65%;
+    animation-delay: 1s;
+  }
+  #bubbleTopLeft{      
+    max-width: 300px;
+    max-height: 60px;
+    top: 25%;
+    left: 0%;    
+    animation-delay: 3s;
+  }
+  #bubbleMidRight{      
+    max-width: 270px;
+    max-height: 110px;
+    top: 35%;
+    left: 65%;
+    animation-delay: 5s;
+  }
+  #bubbleBottonRight{
+    max-width: 170px;
+    max-height: 110px;
+    top: 50%;
+    animation-delay: 6s;
+    left: 65%;
+  }
+  #bubleBottomLeft{
+    max-width: 200px;
+    max-height: 60px;
+    top: 70%;
+    animation-delay: 9s;
+    left: 0%;
+  }
+
+@keyframes aparecer{
+  from{
+    
+    visibility: visible;
+  }
+  10%{
+    z-index: 0;
+}
+  to{
+    visibility: visible;
+    z-index: 0;
+}
+}
+      
+  #divBlur {
+      *{
+
+          filter: blur(15px);
+        }
+  }
+ 
+  #custom-overlay img {
+    display: block;
+    margin: 0 auto;
+    width: 35%;
+    height: auto;
+    // animation: animation 3100ms linear infinite both;
+    // animation-delay: 1s;
+  }
+//   END SPLASH-------------------------------------------

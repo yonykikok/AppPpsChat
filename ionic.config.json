@@ -1,0 +1,7 @@
+{
+  "name": "Chat-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

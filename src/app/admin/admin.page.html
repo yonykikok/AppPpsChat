@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-icon id="iconBack" name="chevron-back-outline" routerLink="/login"></ion-icon>
+  <p id="titleGroup">PPS-4A</p>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let message of messages">
+      <ion-col size="9" *ngIf="message.name !== currentUserMail">
+        <ion-card>
+          <ion-card-header title="{{message.name}}" class="cardHeader">
+            {{message.name | firstUpperCase | removerExtensionEmail }}
+          </ion-card-header>
+          <ion-card-content class="cardContent">
+            {{message.message }}
+            <p class="hora">{{message.date | horaMinuto}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col offset="3" size="9" *ngIf="message.name === currentUserMail">
+        <ion-card class="soyYo">
+          <ion-card-content>
+            {{message.message }}  
+            <p class="hora">{{message.date | horaMinuto}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-input placeholder="Escribe" [(ngModel)]="message">
+  </ion-input>
+  <ion-icon type="submit" (click)="enviarMensaje()" name="send" id="sendButton"></ion-icon>
+</ion-footer>

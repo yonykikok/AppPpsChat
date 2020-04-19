@@ -1,0 +1,79 @@
+ion-card{
+    *{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    border-radius: 5px;
+    padding:0px;
+    // max-width: 80%;
+    background-color: rgb(95, 95, 95);
+}
+ion-content{
+    --background:none;
+    background: url("../../assets/images/whatsappBackground.jfif") no-repeat center / cover;
+    *{
+        color: white;
+    }
+}
+
+#iconBack{
+    font-size: 200%;
+    display: inline-block;
+    color: green;
+}
+ion-card-header{
+    background-color: rgba(128, 128, 128, 0.1);
+
+    background:transparent;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+ion-footer,ion-header{
+    *{
+        background-color: rgb(56, 56, 56);
+        color: white;
+    }
+    background-color: rgb(56, 56, 56);
+
+}
+#titleGroup{
+    transform: translateY(-15px);
+    margin: 0;
+    display: inline-block;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+
+
+.soyYo{ 
+    background-color: rgb(118, 131, 204);
+}
+.hora{
+    position: relative;
+    float:right;
+    font-size: 9px;
+    margin-bottom: 0px;
+}
+#sendButton{
+    // color: rgb(54, 54, 54);
+    position: relative;
+    float: right;
+    font-size: 200%;
+    transform: translateY(3px);
+    margin-right: 5px;
+}
+#sendButton:active{
+    color: red;
+}
+ion-input {
+    display: inline-block;
+    max-width: 80%;
+}
+@keyframes send{
+    from{
+    }to{
+
+        color: red;
+    }
+}
