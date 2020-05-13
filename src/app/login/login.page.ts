@@ -78,7 +78,7 @@ export class LoginPage implements OnInit {
       this.authService.currentUser = this.user;
       console.log(this.authService.currentUser);
       this.presentToast("", 800, "success", "Bienvenido");
-      this.router.navigateByUrl('/admin');
+      this.router.navigateByUrl('/home');
     } else {
       switch (response.code) {
         case "auth/wrong-password":

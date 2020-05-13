@@ -1,13 +1,17 @@
-import { Component, OnInit, Input, ɵConsole } from '@angular/core';
+import { Component, OnInit, Input, ɵConsole, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { $ } from 'protractor';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.page.html',
   styleUrls: ['./admin.page.scss'],
 })
 export class AdminPage implements OnInit {
+
+  mostrarSpinner=true;
+  aula = "";
   @Input() currentUserMail: string = "yonykikok";
   message: string;
   messages = [];
@@ -16,21 +20,26 @@ export class AdminPage implements OnInit {
     "blue", "green", "indigo", "magenta", "orange", "teal", "yellowgreen", "violet", "yellow", "orangered", "orchid", "fuchsia", "black", "aqua"];
   constructor(
     private firestoreService: FirestoreService,
-    private authService: AuthService
+    private authService: AuthService,
+    private renderer: Renderer2
   ) {
     this.currentUserMail = this.authService.currentUser.email;
+    this.aula = this.authService.currentUser.aula;
   }
 
 
+
   ngOnInit() {
-    this.firestoreService.obtenerMensajes('messages4a').subscribe((MessageSnapShot) => {
+
+    this.firestoreService.obtenerMensajes(this.authService.currentUser.aula).subscribe((MessageSnapShot) => {
       this.messages = [];
       MessageSnapShot.forEach((ressponse: any) => {
         let messageData = ressponse.payload.doc.data();
-          this.messages.push(messageData);
+        this.messages.push(messageData);
       });
       this.sortData().reverse();//ordeno y pongo de manera ascendente
       this.asignarColorAleatorio();
+      this.mostrarSpinner=false;
     });
 
   }
@@ -73,13 +82,12 @@ export class AdminPage implements OnInit {
 
   enviarMensaje() {
     this.fecha = new Date();
-    this.firestoreService.crearMensaje('messages4a', { "name": this.currentUserMail, "message": this.message, "date": this.fecha.toString() });
+    this.firestoreService.crearMensaje(this.authService.currentUser.aula, { "name": this.currentUserMail, "message": this.message, "date": this.fecha.toString() });
     this.message = "";
 
     var nodes = document.querySelectorAll('.cardContent');
     // var last = nodes[nodes.length - 1];
     console.log(nodes.length);
-    window.scrollTo(0, document.querySelector(".cardContent:last-child").scrollHeight);
   }
 
 }

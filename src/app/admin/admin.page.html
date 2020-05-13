@@ -1,7 +1,10 @@
 <ion-header>
-  <ion-icon id="iconBack" name="chevron-back-outline" routerLink="/login"></ion-icon>
-  <p id="titleGroup">PPS-4A</p>
+  <ion-icon id="iconBack" name="chevron-back-outline" routerLink="/home"></ion-icon>
+  <p *ngIf="aula=='messages4a'" id="titleGroup" class="PPS4A">PPS-4A</p>
+  <p *ngIf="aula=='messages4b'" id="titleGroup" class="PPS4B">PPS-4B</p>
 </ion-header>
+
+<ion-spinner *ngIf="mostrarSpinner" id="spinner" name="crescent"></ion-spinner>
 
 <ion-content>
   <ion-grid>
@@ -27,13 +30,11 @@
         </ion-card>
       </ion-col>
     </ion-row>
-
-
   </ion-grid>
 </ion-content>
 
 <ion-footer>
   <ion-input placeholder="Escribe" [(ngModel)]="message">
   </ion-input>
-  <ion-icon type="submit" (click)="enviarMensaje()" name="send" id="sendButton"></ion-icon>
+  <ion-icon *ngIf="message" type="submit" (click)="enviarMensaje()" name="send" id="sendButton"></ion-icon>
 </ion-footer>
